@@ -1,9 +1,10 @@
 /*******************************************************************
     Exemplo de como integrar o Telegram com Arduino e atomatização
-    ligando e desligando o LED.
+    ligando e desligando o Luzes da casa.
  *                                                                 *
-    Projeto Final de Curso disciplina Internete das Coisas
-    Adaptado por:Claudio, Hurgo e Max
+    Projeto Final de Curso disciplina Seg. Sistemas embarcados
+    Professor: Francisco Calaça
+    Adaptado por:Claudio Lemes, Hurgo e Max Lucio
  *******************************************************************/
 #include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
