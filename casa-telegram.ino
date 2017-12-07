@@ -10,7 +10,7 @@
 #include <UniversalTelegramBot.h>
 
 // Inicializa uma conexão Wi-Fi ao roteador
-char ssid[] = "IoTcel";     // Digite o SSID da Rede (name)
+char ssid[] = "IoT";     // Digite o SSID da Rede (name)
 char password[] = "12348765"; // Digite a senha da rede
 
 String chatId= "0";
@@ -18,7 +18,7 @@ String chatId= "0";
 String chatIdLogando = "0";
 
 // Initialize Telegram BOT
-#define BOTtoken "480729280:AAH1WiZYvDAuVpmEmNwp9-SAiVhSjTfcpiU"  // Seu token do bot Telegram (Get from Botfather)
+#define BOTtoken "XXXXXXXXXXXXXXXXXXXXXXXXXXXX"  // Seu token do bot Telegram (Get from Botfather)
 
 WiFiClientSecure client;
 UniversalTelegramBot bot(BOTtoken, client);
@@ -47,10 +47,10 @@ void handleNewMessages(int numNewMessages) {
 
     if(chat_id == chatIdLogando){
       if(text == "admin:1234"){ //Login e senha para logar no sistema
-        bot.sendMessage(chatId, "Saindo... outra pessoa logou", "Markdown");
+        bot.sendMessage(chatId, "Saindo... outra pessoa logou", "Markdown"); //Se outro se conectar 
         chatIdLogando = "0";
         chatId = chat_id;
-        bot.sendMessage(chat_id, "Logado com sucesso...", "");
+        bot.sendMessage(chat_id, "Logado com sucesso...", ""); //msg de boas vindas após logar
         String welcome = "Bem-vindo o que deseja fazer??, " + from_name + ".\n";
         welcome += "Escolha um comando Abaixo.\n\n";
         welcome += "/ledon : Para Ligar Led On \n";
@@ -59,7 +59,7 @@ void handleNewMessages(int numNewMessages) {
         bot.sendMessage(chat_id, welcome, "Markdown");
         
       }else{
-        bot.sendMessage(chat_id, "Usuario ou senha incorretos", "");
+        bot.sendMessage(chat_id, "Usuario ou senha incorretos", ""); //msg de erro
       }
       
     } else if(chatId == chat_id){
